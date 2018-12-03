@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="gap-outside">
+<head>
+    <meta charset="utf-8">
+    <title>Vertex - Responsive HTML5 Bootstrap Template</title>
+    <meta name="keywords" content="HTML5 Template" />
+    <meta name="description" content="3WEB - Soluções">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="shortcut icon" type="image/png" href="Content/img/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>3WEB Soluções | @ViewBag.Title</title>
+
+    <!-- Web Fonts  -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600" rel="stylesheet">
+
+    <!-- Add local styles, mostly for plugins css file -->
+    @if (IsSectionDefined("Styles"))
+    {@RenderSection("Styles", required: false)}
+
+    <!-- Libs CSS -->
+    @Styles.Render("~/Content/css")
+
+    <!-- Current Page CSS -->
+    @Styles.Render("~/Content/current_css")
+
+    <!-- Skin -->
+    @Styles.Render("~/Content/skin")
+
+    <!-- Custom CSS -->
+    @Styles.Render("~/Content/custom_css")
+</head>
+<body>
+    @Html.Partial("_Header")
+    <div role="main" class="main">
+        @RenderBody()
+
+        @Html.Partial("_Footer")
+    </div>
+
+    @Scripts.Render("~/bundles/jquery2")
+
+    @Scripts.Render("~/bundles/bootstrap")
+
+    <!-- Handler for local scripts -->
+    @RenderSection("scripts", required: false)
+</body>
+</html>
