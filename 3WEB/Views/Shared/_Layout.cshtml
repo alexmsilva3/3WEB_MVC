@@ -43,6 +43,16 @@
             s0.parentNode.insertBefore(s1, s0);
         })();
     </script>
+
+    <input type="hidden" id="success"
+           value="@TempData["success"]" />
+    <input type="hidden" id="info"
+           value="@TempData["info"]" />
+    <input type="hidden" id="warning"
+           value="@TempData["warning"]" />
+    <input type="hidden" id="error"
+           value="@TempData["error"]" />
+
     <!--End of Tawk.to Script-->
     @Html.Partial("_Header")
 
@@ -57,6 +67,43 @@
     @*@Scripts.Render("~/bundles/bootstrap")*@
 
     <!-- Handler for local scripts -->
+    <script>
+    $(function () {
+        var displayMessage = function (message, msgType) {
+            toastr.options = {
+                "closeButton": true,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": true,
+                "onclick": null,
+                "showDuration": "500",
+                "hideDuration": "500",
+                "timeOut": "3000",
+                "extendedTimeOut": "4000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            };
+            toastr[msgType](message);
+            };
+
+            if ($('#success').val()) {
+            displayMessage($('#success').val(), 'success');
+            }
+            if ($('#info').val()) {
+            displayMessage($('#info').val(), 'info');
+            }
+            if ($('#warning').val()) {
+            displayMessage($('#warning').val(), 'warning');
+            }
+            if ($('#error').val()) {
+            displayMessage($('#error').val(), 'error');
+            }
+        });
+    </script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

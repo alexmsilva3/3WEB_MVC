@@ -30,7 +30,8 @@ namespace _3WEB
 
                         "~/Content/js/theme-core.js",
                         "~/Content/js/theme.js",
-                        "~/Content/js/theme.init.js"
+                        "~/Content/js/theme.init.js",
+                        "~/Scripts/toastr.js"
                         ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -64,7 +65,8 @@ namespace _3WEB
                         "~/Content/css/theme-responsive.css",
                         "~/Content/plugins/aos/aos.css",
                         "~/Content/plugins/owl-carousel/owl.theme.css",
-                        "~/Content/plugins/owl-carousel/owl.carousel.css"
+                        "~/Content/plugins/owl-carousel/owl.carousel.css",
+                        "~/Content/toastr.css"
                       ));
 
             bundles.Add(new StyleBundle("~/Content/CurrentCSS").Include(

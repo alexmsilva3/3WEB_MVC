@@ -2,6 +2,9 @@
     ViewBag.Title = "Home";
 }
 
+@model _3WEB.Models.Model_Mail
+
+
 <div class="slider-container slider-container-height-650 rev_slider_wrapper">
     <div id="revolutionSlider" class="slider rev_slider" data-version="5.4.7"
          data-plugin-revolution-slider data-plugin-options="{'delay': 9000, 'gridwidth': [1140,960,720,540], 'gridheight': [650,650,650,650], 'disableProgressBar': 'on', 'responsiveLevels': [4096,1200,992,576], 'navigation' : {'arrows': { 'enable': true, 'style': 'slider-arrows-style-1' }, 'bullets': {'enable': true, 'style': 'bullets-style-1', 'h_align': 'center', 'v_align': 'bottom', 'space': 7, 'v_offset': 35, 'h_offset': 0}}}">
@@ -1026,21 +1029,22 @@
                                 Preencha o formulário abaixo e nossa equipe entrará em contato com você em breve.
                             </p>
 
-
-                            <form action="#" method="post">
+                            @using (Html.BeginForm())
+                            {
+                                @Html.ValidationSummary()
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-sm-4">
                                             <label>Seu nome <span class="required">*</span></label>
-                                            <input type="text" value="" maxlength="100" class="form-control" name="name" id="name">
+                                            <input type="text" value="" maxlength="100" class="form-control" name="Nome" id="Nome">
                                         </div>
                                         <div class="col-sm-4">
                                             <label>Seu e-mail <span class="required">*</span></label>
-                                            <input type="email" value="" maxlength="100" class="form-control" name="email" id="email1">
+                                            <input type="email" value="" maxlength="100" class="form-control" name="Para" id="Para">
                                         </div>
                                         <div class="col-sm-4">
                                             <label>Empresa</label>
-                                            <input type="text" value="" maxlength="100" class="form-control" name="website" id="website">
+                                            <input type="text" value="" maxlength="100" class="form-control" name="Assunto" id="Assunto">
                                         </div>
                                     </div>
                                 </div>
@@ -1048,7 +1052,7 @@
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <label>Mensagem <span class="required">*</span></label>
-                                            <textarea maxlength="5000" rows="10" class="form-control" name="comment" id="Textarea1"></textarea>
+                                            <textarea maxlength="5000" rows="10" class="form-control" name="Mensagem" id="Mensagem"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -1057,7 +1061,7 @@
                                         <button name="submit" type="submit" id="Button1" class="btn v-btn v-btn-default v-small-button"><i class="fa fa-magic"></i> Enviar</button>
                                     </div>
                                 </div>
-                            </form>
+                            }
                         </div>
                     </div>
                     <div class="col-sm-3">
@@ -1074,7 +1078,7 @@
                             <h3>Fone & E-mail</h3>
                         </div>
                         <p>
-                            Email: <a href="#" target="_blank">contato@3web.com.br</a><br />
+                            E-mail: <a href="#" target="_blank">contato@3web.com.br</a><br />
                             Phone: (042) 9 9941-6541
                         </p>
 
