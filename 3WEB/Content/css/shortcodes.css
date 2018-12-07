@@ -545,7 +545,7 @@
 }
 
 .feature-box-icon:hover, .sf-hover .feature-box-icon {
-    background-image: url(../img/crease.svg);
+    background-image: url(/Content/img/crease.svg);
 }
 
 .browser-ie .feature-box-icon:hover,
@@ -665,7 +665,7 @@
 }
 
 .feature-box[class*="feature-box-secundary-"] .feature-box-icon {
-    background-image: url(../img/crease.svg);
+    background-image: url(/Content/img/crease.svg);
     -moz-background-size: 100% 100%;
     background-size: 100% 100%;
     background-position: center center;

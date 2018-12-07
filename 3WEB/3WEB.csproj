@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
-  <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -15,7 +15,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>_3WEB</RootNamespace>
     <AssemblyName>3WEB</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -26,6 +26,8 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <TypeScriptToolsVersion>2.5</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -46,96 +48,81 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.8.1\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.8.1\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.8.1\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.8.1\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.8.1\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.8.1\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-    </Reference>
     <Reference Include="System.Net.Http">
     </Reference>
     <Reference Include="System.Net.Http.WebRequest">
     </Reference>
-    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Optimization">
-      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="WebGrease">
-      <Private>True</Private>
-      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
-    </Reference>
-    <Reference Include="Antlr3.Runtime">
-      <Private>True</Private>
-      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ApplicationInsights">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.Agent.Intercept">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.DependencyCollector">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.PerfCounterCollector">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.WindowsServer">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.Web">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -149,6 +136,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\blog.css" />
@@ -156,12 +147,13 @@
     <Content Include="Content\css\custom.css" />
     <Content Include="Content\css\font-awesome.min.css" />
     <Content Include="Content\css\font-icons.css" />
-    <Content Include="Content\css\fonts\font-icons.svg" />
-    <Content Include="Content\css\fonts\fontawesome-webfont.svg" />
-    <Content Include="Content\css\font\Museo500-Regular-webfont.svg" />
-    <Content Include="Content\css\font\Museo_Slab_300-webfont.svg" />
-    <Content Include="Content\css\font\sourcesanspro-bold-webfont.svg" />
-    <Content Include="Content\css\font\streamline-30px.svg" />
+    <Content Include="Content\fonts\font-icons.svg" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\Museo500-Regular-webfont.svg" />
+    <Content Include="Content\fonts\Museo_Slab_300-webfont.svg" />
+    <Content Include="Content\fonts\revicons\revicons90c6.svg" />
+    <Content Include="Content\fonts\sourcesanspro-bold-webfont.svg" />
+    <Content Include="Content\fonts\streamline-30px.svg" />
     <Content Include="Content\css\header.css" />
     <Content Include="Content\css\portfolio.css" />
     <Content Include="Content\css\shortcodes.css" />
@@ -206,21 +198,6 @@
     <Content Include="Content\img\base\v-arrow.png" />
     <Content Include="Content\img\base\video-overlay-1.png" />
     <Content Include="Content\img\blank.gif" />
-    <Content Include="Content\img\blog\01.jpg" />
-    <Content Include="Content\img\blog\02.jpg" />
-    <Content Include="Content\img\blog\03.jpg" />
-    <Content Include="Content\img\blog\04.jpg" />
-    <Content Include="Content\img\blog\05.jpg" />
-    <Content Include="Content\img\blog\06.jpg" />
-    <Content Include="Content\img\blog\07.jpg" />
-    <Content Include="Content\img\blog\b-fw-1.jpg" />
-    <Content Include="Content\img\blog\b-fw-2.jpg" />
-    <Content Include="Content\img\blog\b-fw-3.jpg" />
-    <Content Include="Content\img\blog\b-fw-4.jpg" />
-    <Content Include="Content\img\blog\b-fw-5.jpg" />
-    <Content Include="Content\img\blog\b-fw-6.jpg" />
-    <Content Include="Content\img\blog\b-fw-7.jpg" />
-    <Content Include="Content\img\blog\b-fw-8.jpg" />
     <Content Include="Content\img\client\01.png" />
     <Content Include="Content\img\client\02.png" />
     <Content Include="Content\img\client\03.png" />
@@ -229,6 +206,7 @@
     <Content Include="Content\img\client\diesel.png" />
     <Content Include="Content\img\client\envato.png" />
     <Content Include="Content\img\client\fujitsu.png" />
+    <Content Include="Content\img\client\grupojos.png" />
     <Content Include="Content\img\client\huawei.png" />
     <Content Include="Content\img\client\intel.png" />
     <Content Include="Content\img\crease.svg" />
@@ -277,85 +255,16 @@
     <Content Include="Content\img\master-layers\shadow-s.png" />
     <Content Include="Content\img\master-layers\shadow.png" />
     <Content Include="Content\img\master-layers\video-cover-s.jpg" />
-    <Content Include="Content\img\mix\07.jpg" />
-    <Content Include="Content\img\mix\08.jpg" />
-    <Content Include="Content\img\mix\09.jpg" />
-    <Content Include="Content\img\mix\10.jpg" />
-    <Content Include="Content\img\mix\23.jpg" />
-    <Content Include="Content\img\mix\about1.jpg" />
-    <Content Include="Content\img\mix\animate_charts.png" />
-    <Content Include="Content\img\mix\animate_icons.png" />
-    <Content Include="Content\img\mix\animate_images.png" />
-    <Content Include="Content\img\mix\Briefcase1.png" />
-    <Content Include="Content\img\mix\c1.jpg" />
-    <Content Include="Content\img\mix\c2.jpg" />
-    <Content Include="Content\img\mix\c3.jpg" />
     <Content Include="Content\img\mix\contentm.png" />
-    <Content Include="Content\img\mix\desert-miniplanet.jpg" />
-    <Content Include="Content\img\mix\desktop-10.jpg" />
-    <Content Include="Content\img\mix\desktop-11.jpg" />
-    <Content Include="Content\img\mix\desktop-1920x700.jpg" />
-    <Content Include="Content\img\mix\desktop-2-1800x765.png" />
-    <Content Include="Content\img\mix\desktop-2000x600.png" />
-    <Content Include="Content\img\mix\desktop-3.jpg" />
-    <Content Include="Content\img\mix\desktop-4.jpg" />
-    <Content Include="Content\img\mix\desktop-5-2000x1250.jpg" />
-    <Content Include="Content\img\mix\desktop-6.jpg" />
-    <Content Include="Content\img\mix\desktop-7.png" />
-    <Content Include="Content\img\mix\desktop-8.jpg" />
-    <Content Include="Content\img\mix\desktop-9.jpg" />
-    <Content Include="Content\img\mix\desktop1-2000x1250.jpg" />
-    <Content Include="Content\img\mix\desktop3-1920x1000.jpg" />
-    <Content Include="Content\img\mix\employer-logo-02-180x135.png" />
-    <Content Include="Content\img\mix\employer-logo-03-180x135.png" />
-    <Content Include="Content\img\mix\employer-logo-04-180x135.png" />
-    <Content Include="Content\img\mix\employer-logo-05-180x135.png" />
-    <Content Include="Content\img\mix\FAQ-Single-Image-1.jpg" />
-    <Content Include="Content\img\mix\FAQ-Single-Image-2.jpg" />
-    <Content Include="Content\img\mix\FAQ-Single-Image-3.jpg" />
-    <Content Include="Content\img\mix\FAQ-Single-Image-4.jpg" />
-    <Content Include="Content\img\mix\img1.jpg" />
-    <Content Include="Content\img\mix\img2.jpg" />
-    <Content Include="Content\img\mix\j1.jpg" />
-    <Content Include="Content\img\mix\j2.jpg" />
-    <Content Include="Content\img\mix\j3.jpg" />
-    <Content Include="Content\img\mix\j4.jpg" />
-    <Content Include="Content\img\mix\man-1.png" />
-    <Content Include="Content\img\mix\man-look-up.jpg" />
-    <Content Include="Content\img\mix\native_video.png" />
-    <Content Include="Content\img\mix\notebook-right.png" />
-    <Content Include="Content\img\mix\package1.png" />
-    <Content Include="Content\img\mix\pe1.png" />
-    <Content Include="Content\img\mix\pe2.jpg" />
-    <Content Include="Content\img\mix\pe3.png" />
     <Content Include="Content\img\mix\pen.jpg" />
     <Content Include="Content\img\mix\phones1.png" />
-    <Content Include="Content\img\mix\plant.png" />
-    <Content Include="Content\img\mix\portfolio-1.jpg" />
-    <Content Include="Content\img\mix\portfolio-10.jpg" />
-    <Content Include="Content\img\mix\portfolio-11.jpg" />
-    <Content Include="Content\img\mix\portfolio-12.jpg" />
-    <Content Include="Content\img\mix\portfolio-13.jpg" />
-    <Content Include="Content\img\mix\portfolio-14.jpg" />
-    <Content Include="Content\img\mix\portfolio-2.jpg" />
-    <Content Include="Content\img\mix\portfolio-3.jpg" />
-    <Content Include="Content\img\mix\portfolio-4.jpg" />
-    <Content Include="Content\img\mix\portfolio-5.jpg" />
-    <Content Include="Content\img\mix\portfolio-6.jpg" />
-    <Content Include="Content\img\mix\portfolio-7.jpg" />
-    <Content Include="Content\img\mix\portfolio-8.jpg" />
-    <Content Include="Content\img\mix\portfolio-9.jpg" />
-    <Content Include="Content\img\mix\pricing.jpg" />
-    <Content Include="Content\img\mix\settings1.png" />
-    <Content Include="Content\img\mix\slider17.jpg" />
-    <Content Include="Content\img\mix\sparkler_slider_bkg.jpg" />
-    <Content Include="Content\img\mix\target1.png" />
     <Content Include="Content\img\p1.png" />
     <Content Include="Content\img\p2.png" />
     <Content Include="Content\img\slider\04.jpg" />
     <Content Include="Content\img\slider\1.jpg" />
     <Content Include="Content\img\slider\background-4.jpg" />
     <Content Include="Content\img\slider\bg-float.png" />
+    <Content Include="Content\img\slider\bg1.jpg" />
     <Content Include="Content\img\slider\bg12.jpg" />
     <Content Include="Content\img\slider\bg13.jpg" />
     <Content Include="Content\img\slider\bg14.jpg" />
@@ -381,13 +290,18 @@
     <Content Include="Content\img\slider\slider6.jpg" />
     <Content Include="Content\img\slider\slider7.jpg" />
     <Content Include="Content\img\slider\transparent.png" />
+    <Content Include="Content\img\smart_chefe\1.png" />
+    <Content Include="Content\img\smart_chefe\2.png" />
+    <Content Include="Content\img\smart_chefe\3.png" />
+    <Content Include="Content\img\smart_chefe\4.png" />
+    <Content Include="Content\img\smart_chefe\5.png" />
+    <Content Include="Content\img\smart_chefe\6.png" />
     <Content Include="Content\img\team\t1.png" />
     <Content Include="Content\img\team\t2.png" />
     <Content Include="Content\img\team\t3.png" />
     <Content Include="Content\img\team\t4.png" />
     <Content Include="Content\img\team\t5.png" />
     <Content Include="Content\img\team\t6.png" />
-    <Content Include="Content\img\team\team02.jpg" />
     <Content Include="Content\img\thumbs\project-1.jpg" />
     <Content Include="Content\img\thumbs\project-2.jpg" />
     <Content Include="Content\img\thumbs\project-3.jpg" />
@@ -504,50 +418,75 @@
     <Content Include="Content\video\video_space_cover.jpg" />
     <Content Include="Content\video\video_space_cover.mp4" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\css\fonts\font-icons.eot" />
-    <Content Include="Content\css\fonts\font-icons.ttf" />
-    <Content Include="Content\css\fonts\font-icons.woff" />
-    <Content Include="Content\css\fonts\fontawesome-webfont.eot" />
-    <Content Include="Content\css\fonts\fontawesome-webfont.ttf" />
-    <Content Include="Content\css\fonts\fontawesome-webfont.woff" />
-    <Content Include="Content\css\fonts\fontawesome-webfont.woff2" />
-    <Content Include="Content\css\fonts\FontAwesome.otf" />
-    <Content Include="Content\css\font\Museo500-Regular-webfont.eot" />
-    <Content Include="Content\css\font\Museo500-Regular-webfont.ttf" />
-    <Content Include="Content\css\font\Museo500-Regular-webfont.woff" />
-    <Content Include="Content\css\font\Museo_Slab_300-webfont.eot" />
-    <Content Include="Content\css\font\Museo_Slab_300-webfont.ttf" />
-    <Content Include="Content\css\font\Museo_Slab_300-webfont.woff" />
-    <Content Include="Content\css\font\sourcesanspro-bold-webfont.eot" />
-    <Content Include="Content\css\font\sourcesanspro-bold-webfont.ttf" />
-    <Content Include="Content\css\font\sourcesanspro-bold-webfont.woff" />
-    <Content Include="Content\css\font\streamline-30px.ttf" />
-    <Content Include="Content\css\font\streamline-30px.woff" />
+    <Content Include="Content\fonts\font-icons.eot" />
+    <Content Include="Content\fonts\font-icons.ttf" />
+    <Content Include="Content\fonts\font-icons.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
     <Content Include="Content\plugins\masterslider\masterslider.min.js.map" />
     <Content Include="Content\plugins\rs-plugin\css\closedhand.123" />
     <Content Include="Content\plugins\rs-plugin\css\openhand.123" />
     <Content Include="Content\plugins\rs-plugin\fonts\revicons\revicons90c6.eot" />
     <Content Include="Content\plugins\rs-plugin\fonts\revicons\revicons90c6.ttf" />
     <Content Include="Content\plugins\rs-plugin\fonts\revicons\revicons90c6.woff" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\fonts\Museo500-Regular-webfont.eot" />
+    <Content Include="Content\fonts\Museo500-Regular-webfont.ttf" />
+    <Content Include="Content\fonts\Museo500-Regular-webfont.woff" />
+    <Content Include="Content\fonts\streamline-30px.ttf" />
+    <Content Include="Content\fonts\streamline-30px.woff" />
+    <Content Include="Content\fonts\Museo_Slab_300-webfont.eot" />
+    <Content Include="Content\fonts\Museo_Slab_300-webfont.ttf" />
+    <Content Include="Content\fonts\Museo_Slab_300-webfont.woff" />
+    <Content Include="Content\fonts\sourcesanspro-bold-webfont.eot" />
+    <Content Include="Content\fonts\sourcesanspro-bold-webfont.ttf" />
+    <Content Include="Content\fonts\sourcesanspro-bold-webfont.woff" />
+    <Content Include="Content\fonts\revicons\revicons90c6.eot" />
+    <Content Include="Content\fonts\revicons\revicons90c6.ttf" />
+    <Content Include="Content\fonts\revicons\revicons90c6.woff" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
     <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -562,6 +501,15 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Home\Servicos.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -569,23 +517,20 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
@@ -613,8 +558,7 @@
     <PropertyGroup>
       <ErrorText>Este projeto faz referência a pacotes do NuGet que não estão presentes neste computador. Use a Restauração de Pacotes do NuGet para baixá-los.  Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkID=322105. O arquivo ausente é {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

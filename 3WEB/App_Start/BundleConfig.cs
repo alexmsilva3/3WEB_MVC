@@ -18,7 +18,7 @@ namespace _3WEB
                         "~/Content/js/jquery.easing.js",
                         "~/Content/js/jquery.fitvids.js",
                         "~/Content/js/jquery.carouFredSel.min.js",
-                        "~/Content/js/jquery.validate.js",
+                        //"~/Content/js/jquery.validate.js",
                         "~/Content/js/theme-plugins.js",
                         "~/Content/js/jquery.isotope.min.js",
                         "~/Content/js/imagesloaded.js",
@@ -46,7 +46,7 @@ namespace _3WEB
                       //"~/Scripts/respond.js",
                        "~/Content/js/bootstrap.min.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
+            bundles.Add(new StyleBundle("~/Content/BasicCSS").Include(
                         //"~/Content/bootstrap.css",
                         //"~/Content/site.css",
                         "~/Content/css/bootstrap.min.css",
@@ -67,13 +67,13 @@ namespace _3WEB
                         "~/Content/plugins/owl-carousel/owl.carousel.css"
                       ));
 
-            bundles.Add(new StyleBundle("~/Content/current_css").Include(
+            bundles.Add(new StyleBundle("~/Content/CurrentCSS").Include(
                         "~/Content/plugins/rs-plugin/css/settings.css"));
 
             bundles.Add(new StyleBundle("~/Content/skin").Include(
                         "~/Content/css/skin/default.css"));
 
-            bundles.Add(new StyleBundle("~/Content/custom_css").Include(
+            bundles.Add(new StyleBundle("~/Content/CustomCSS").Include(
                         "~/Content/css/custom.css"));
         }
     }
