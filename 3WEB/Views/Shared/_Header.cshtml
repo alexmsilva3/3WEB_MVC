@@ -5,7 +5,7 @@
             <div class="header-row">
                 <div class="header-column justify-content-start">
                     <div class="header-logo">
-                        <a href="/Home/Index">
+                        <a href="@Html.ActionLink("Home", "Index")">
                             <img alt="3WEB" width="130" src="/Content/img/logo.png">
                         </a>
                     </div>
@@ -21,6 +21,9 @@
                                     </li>
                                     <li>
                                         <a href="@Url.Action("Index", "Home")#quem-somos">Conheça</a>
+                                        @*<a href="#quem-somos">Conheça</a>
+                                          modo correto. hj esta do outro jeito pq nao temos um header diferente para a pagina de serviços
+                                            *@
                                     </li>
                                     <li>
                                         <a href="@Url.Action("Index", "Home")#servicos">Serviços</a>
