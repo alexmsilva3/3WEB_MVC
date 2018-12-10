@@ -12,7 +12,8 @@ namespace _3WEB
                         "~/Scripts/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jquery2").Include(
-                        "~/Content/js/jquery.min.js",
+                        //"~/Content/js/jquery.min.js",
+                        "~/Scripts/jquery-{version}.js",
                         "~/Content/js/popper.js",
                         "~/Content/js/jquery.flexslider-min.js",
                         "~/Content/js/jquery.easing.js",
@@ -30,8 +31,9 @@ namespace _3WEB
 
                         "~/Content/js/theme-core.js",
                         "~/Content/js/theme.js",
-                        "~/Content/js/theme.init.js",
-                        "~/Scripts/toastr.js"
+                        "~/Scripts/toastr.js",
+
+                        "~/Content/js/theme.init.js"
                         ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -47,10 +49,12 @@ namespace _3WEB
                       //"~/Scripts/respond.js",
                        "~/Content/js/bootstrap.min.js"));
 
+
+
             bundles.Add(new StyleBundle("~/Content/BasicCSS").Include(
-                        //"~/Content/bootstrap.css",
+                        "~/Content/bootstrap.css",
                         //"~/Content/site.css",
-                        "~/Content/css/bootstrap.min.css",
+                        //"~/Content/css/bootstrap.min.css",
                         "~/Content/css/style.css",
                         "~/Content/css/font-awesome.min.css",
                         "~/Content/css/streamline-icon.css",
